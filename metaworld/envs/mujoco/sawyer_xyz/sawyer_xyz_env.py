@@ -213,6 +213,8 @@ class SawyerXYZEnv(SawyerMocapBase, EzPickle):
             camera_id=camera_id,
         )
 
+        print("Using custom metaworld!")
+
         mujoco.mj_forward(
             self.model, self.data
         )  # *** DO NOT REMOVE: EZPICKLE WON'T WORK *** #
