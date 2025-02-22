@@ -192,7 +192,7 @@ class SawyerXYZEnv(SawyerMocapBase, EzPickle):
         self.mocap_high = np.hstack(mocap_high)
         self.curr_path_length: int = 0
         self.seeded_rand_vec: bool = False
-        self._freeze_rand_vec: bool = True
+        self._freeze_rand_vec: bool = False
         self._last_rand_vec: npt.NDArray[Any] | None = None
         self.num_resets: int = 0
         self.current_seed: int | None = None
@@ -288,7 +288,7 @@ class SawyerXYZEnv(SawyerMocapBase, EzPickle):
         data = pickle.loads(task.data)
         assert isinstance(self, data["env_cls"])
         del data["env_cls"]
-        self._freeze_rand_vec = True
+        self._freeze_rand_vec = False
         self._last_rand_vec = data["rand_vec"]
         del data["rand_vec"]
         self._partially_observable = data["partially_observable"]
