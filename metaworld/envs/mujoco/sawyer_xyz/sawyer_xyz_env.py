@@ -20,6 +20,7 @@ from metaworld.types import XYZ, EnvironmentStateDict, ObservationDict, Task
 
 RenderMode: TypeAlias = "Literal['human', 'rgb_array', 'depth_array']"
 
+np.random.seed(0)
 
 class SawyerMocapBase(mjenv_gym):
     """Provides some commonly-shared functions for Sawyer Mujoco envs that use mocap for XYZ control."""
